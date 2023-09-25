@@ -1,0 +1,23 @@
+{% extends "App/padre.html" %}
+
+{% load static %}
+
+{%block titulo%}
+Bienvenido, Busca tu modelo
+{% endblock %}
+
+{% block descripcion %}
+
+<form action="/App/resultado/" method="GET">
+
+    <input type="text" name="modelo" id="modelo">
+    <input type="submit", value="buscar">
+</form>
+<p>Estamos buscando el modelo: {{modelo}}</p>
+
+    {% for modelo in modelo %}
+        <p>Modelo :{{modelo.modelo}} ---- Marca:{{modelo.marca}}</p>
+    {% endfor %}
+    
+{% endblock %}
+
